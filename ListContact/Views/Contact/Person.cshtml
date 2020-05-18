@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+@model ListContact.Models.Person
+
+<h1>@Model.Name</h1>
+
+<ul>
+    <li>Email: @Model.Email</li>
+    <li>Password: @Model.Password</li>
+    <li>Username: @Model.Username</li>
+</ul>
+
+@if (Model.ContactBooks != null)
+{
+    <h4>Contact Books</h4>
+    @foreach(var contactBook in Model.ContactBooks)
+    {
+        <table width="100%" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>UsernamePerson</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@contactBook.Name</td>
+                    <td>@contactBook.Type</td>
+                    <td>@contactBook.Size</td>
+                    <td>@contactBook.UsernamePerson</td>
+                    <td><a href="@Model.Username/@contactBook.Name/Contacts">View contacts</a></td>
+                </tr>
+            </tbody>
+        </table>
+    }
+}
