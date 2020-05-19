@@ -73,7 +73,7 @@ namespace ListContact.Controllers
                 {
                     FirstName = $"John",
                     Surname = $"Doe {i}",
-                    Birthday = new DateTime(random.Next(1,9999),random.Next(1,12),random.Next(1,28)),
+                    Birthday = new DateTime(random.Next(1990,2020),random.Next(1,12),random.Next(1,28)),
                     Profession = "Student",
                     Email = $"johndoe_{i}@mail.com",
                     Phone = $"+55 ({random.Next(1,21)}) {random.Next(4,9)}{random.Next(0, 9)}" +

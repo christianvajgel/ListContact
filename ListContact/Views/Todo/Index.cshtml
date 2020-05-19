@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Tasks</h1>
+
+@model List<Todo>
+
+<table width="100%" border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Name</td>
+                <td>@(task.Finished ? "Finished" : "Open")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div>
+    <a class="btn btn-dark" asp-controller="Todo" asp-action="New">New Task</a>
+</div>
