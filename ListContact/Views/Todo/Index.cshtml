@@ -20,7 +20,7 @@
             });
         }, 2000);
     </script>
-    
+
 }
 
 @model List<Todo>
@@ -39,7 +39,8 @@
             <tr>
                 <td>@task.Name</td>
                 <td>@(task.Finished ? "Finished" : "Open")</td>
-                <td><a class="btn btn-warning btn-sm" href="/Todo/Edit?id=@task.Id">Edit</a></td>
+                <td><a class="btn btn-warning btn-sm" href="/Todo/Edit?id=@task.Id">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/Todo/Delete?id=@task.Id">Delete</a></td>
             </tr>
         }
     </tbody>
